@@ -11,7 +11,7 @@ body {
 .page-container {
     max-width: 100%;
     margin: 0 auto;
-    background: white;
+    background: rgb(240, 203, 236);
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto auto 1fr auto;
@@ -77,7 +77,7 @@ main.content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background: white;
+    background: rgb(243, 224, 239);
     grid-area: main;
     box-sizing: border-box;
 }
