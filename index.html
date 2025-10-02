@@ -9,51 +9,67 @@
 </head>
 
 <body>
-    <div class="header">☀️</div>
+    <div class="page-container">
+        <header class="header">
+            <h1>☀️</h1>
+        </header>
 
-    <div class="nav">
-        <a href="index.html">Главная</a>
-        <a href="pages/news.html">Новости</a>
-        <a href="pages/practices.html">Практики</a>
-        <a href="pages/goods.html">Товары</a>
-        <a href="pages/contacts.html">Контакты</a>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <article class="profile-header">
+                <h1 class="profile-title">Информация об авторе</h1>
+                <img class="profile-photo" src="images/photo.jpg" alt="Фото">
+                <h2 class="profile-name">Соловьева Анастасия Андреевна</h2>
+                <p class="profile-group">ЭФБО-04-24</p>
+            </article>
+
+            <section class="about-me">
+                <h2>Обо мне</h2>
+                <p>Обо мне: хихоньки-хахоньки</p>
+            </section>
+
+            <section class="skills-container">
+                <h2>Мои навыки</h2>
+                <div class="skills-grid">
+                    <div class="skill-tag">Готовить</div>
+                    <div class="skill-tag">Кушать</div>
+                    <div class="skill-tag">Спать на парах</div>
+                    <div class="skill-tag">Не приходить на пары</div>
+                </div>
+            </section>
+
+            <section class="experience-section">
+                <h2 class="section-title">Мой опыт работы</h2>
+                <div class="experience-grid">
+                    <article class="experience-card">
+                        <h3 class="experience-title">Опыт 1</h3>
+                        <p class="experience-desc">Работала репетитором по математике</p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-title">Опыт 2</h3>
+                        <p class="experience-desc">Работала репетитором по английскому</p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-title">Опыт 3</h3>
+                        <p class="experience-desc">Не работала.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Конец</p>
+        </footer>
     </div>
-
-    <div class="content">
-        <h1>Информация об авторе</h1>
-        <img class="photo" src="images/photo.jpg" alt="Фото">
-        <h2>Соловьева Анастасия Андреевна</h2>
-        <p class="group">ЭФБО-04-24</p>
-
-        <div class="about">
-            <p>Обо мне: хихоньки-хахоньки</p>
-        </div>
-
-        <div class="skills">
-            <span>Готовить</span>
-            <span>Кушать</span>
-            <span>Спать на парах</span>
-            <span>Не приходить на пары</span>
-        </div>
-
-        <div class="experience">
-            <h2>Мой опыт работы</h2>
-            <div class="exp-item">
-                <h3>Опыт 1</h3>
-                <p>Работала репетитором по математике</p>
-            </div>
-            <div class="exp-item">
-                <h3>Опыт 2</h3>
-                <p>Работала репетитором по английскому</p>
-            </div>
-            <div class="exp-item">
-                <h3>Опыт 3</h3>
-                <p>Не работала.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">Конец</div>
 </body>
 
 </html>

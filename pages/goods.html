@@ -9,41 +9,54 @@
 </head>
 
 <body>
-    <div class="header">☀️</div>
+    <div class="page-container">
+        <header class="header">
+            <h1>☀️</h1>
+        </header>
 
-    <div class="nav">
-        <a href="../index.html">Главная</a>
-        <a href="news.html">Новости</a>
-        <a href="practices.html">Практики</a>
-        <a href="goods.html">Товары</a>
-        <a href="contacts.html">Контакты</a>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <h1 class="section-title">Наши товары</h1>
+
+            <div class="products-grid">
+                <article class="product-card">
+                    <img class="product-image" src="../images/goods1.jpg" alt="Товар 1">
+                    <h3 class="product-name">Товар 1</h3>
+                    <p class="product-price">1052 ₽</p>
+                </article>
+
+                <article class="product-card">
+                    <img class="product-image" src="../images/goods2.jpg" alt="Товар 2">
+                    <h3 class="product-name">Товар 2</h3>
+                    <p class="product-price">1552 ₽</p>
+                </article>
+
+                <article class="product-card">
+                    <img class="product-image" src="../images/goods3.jpg" alt="Товар 3">
+                    <h3 class="product-name">Товар 3</h3>
+                    <p class="product-price">2052 ₽</p>
+                </article>
+                <article class="product-card">
+                    <img class="product-image" src="../images/goods4.jpg" alt="Товар 4">
+                    <h3 class="product-name">Товар 4</h3>
+                    <p class="product-price">2552 ₽</p>
+                </article>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Конец</p>
+        </footer>
     </div>
-
-    <div class="content">
-        <h1>Наши товары</h1>
-
-        <div class="goods">
-            <div class="product">
-                <img src="../images/goods1.jpg" alt="Товар 1">
-                <h3>Товар 1</h3>
-                <p>Цена товара 1</p>
-            </div>
-
-            <div class="product">
-                <img src="../images/goods2.jpg" alt="Товар 2">
-                <h3>Товар 2</h3>
-                <p>Цена товара 2</p>
-            </div>
-
-            <div class="product">
-                <img src="../images/goods3.jpg" alt="Товар 3">
-                <h3>Товар 3</h3>
-                <p>Цена товара 3</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">Конец</div>
 </body>
 
 </html>
