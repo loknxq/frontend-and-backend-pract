@@ -11,45 +11,74 @@
 <body>
     <div class="page-container">
         <header class="header">
-            <h1>☀️</h1>
+            <h1 class="header__title">☀️</h1>
+            <div class="theme-switcher">
+                <button class="theme-switcher__button" onclick="toggleTheme()">🌙 Тёмная</button>
+            </div>
         </header>
 
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+                <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
+                <li class="nav__item"><a class="nav__link nav__link--active" href="practices.html">Практики</a></li>
+                <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
             </ul>
         </nav>
 
-        <main class="content">
+        <main class="main">
             <h1 class="section-title">Практические работы</h1>
 
-            <div class="experience-grid">
+            <div class="experience__grid">
                 <article class="experience-card">
-                    <h3 class="experience-title">Практика 1: Сайтик</h3>
-                    <p class="experience-desc">Базовый сайтик</p>
-                    <p class="experience-desc">https://loknxq.github.io/p1/src/index.html</p>
+                    <h3 class="experience-card__title">Практика 1: Сайтик</h3>
+                    <p class="experience-card__desc">Базовый сайтик</p>
+                    <p class="experience-card__desc">https://loknxq.github.io/p1/src/index.html</p>
                 </article>
 
                 <article class="experience-card">
-                    <h3 class="experience-title">Практика 2: ТИПЫ</h3>
-                    <p class="experience-desc">Задачки JavaScript</p>
+                    <h3 class="experience-card__title">Практика 2: ТИПЫ</h3>
+                    <p class="experience-card__desc">Задачки JavaScript</p>
                 </article>
 
                 <article class="experience-card">
-                    <h3 class="experience-title">Практика 3: Физкультура</h3>
-                    <p class="experience-desc">Тренажерный зал</p>
+                    <h3 class="experience-card__title">Практика 3: Физкультура</h3>
+                    <p class="experience-card__desc">Тренажерный зал</p>
                 </article>
             </div>
         </main>
 
         <footer class="footer">
-            <p>Конец</p>
+            <p class="footer__text">Конец</p>
         </footer>
     </div>
+
+    <script>
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateButtonText(savedTheme);
+        }
+        
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateButtonText(newTheme);
+        }
+        
+        function updateButtonText(theme) {
+            const button = document.querySelector('.theme-switcher__button');
+            if (button) {
+                button.textContent = theme === 'light' ? '🌙 Тёмная' : '☀️ Светлая';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', loadTheme);
+    </script>
 </body>
 
 </html>

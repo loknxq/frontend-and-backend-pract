@@ -11,54 +11,86 @@
 <body>
     <div class="page-container">
         <header class="header">
-            <h1>☀️</h1>
+            <h1 class="header__title">☀️</h1>
+            <div class="theme-switcher">
+                <button class="theme-switcher__button" onclick="toggleTheme()">🌙 Тёмная</button>
+            </div>
         </header>
 
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+                <li class="nav__item"><a class="nav__link nav__link--active" href="news.html">Новости</a></li>
+                <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+                <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
             </ul>
         </nav>
 
-        <main class="content">
+        <main class="main">
             <h1 class="section-title">Новости</h1>
 
-            <div class="news-container">
+            <div class="news__container">
                 <article class="news-card">
-                    <h2 class="news-title">Новость 1</h2>
-                    <p class="news-meta">01.11.2024 12:00 А.А.Соловьева</p>
-                    <h3 class="news-title">Завела кота 1.</h3>
-                    </p> Кота нашли на помойке на какой-то стройке. Кот всех боялся и его с трудом забрали от волонтерши, потому что он никуда не хотел ехать, но теперь он ничего не боится и любит спать на подоконниках.</p>
-                    
+                    <h2 class="news-card__title">Новость 1</h2>
+                    <p class="news-card__meta">01.11.2024 12:00 А.А.Соловьева</p>
+                    <h3 class="news-card__title">Завела кота 1.</h3>
+                    <div class="news-card__text">
+                        <p>Кота нашли на помойке на какой-то стройке. Кот всех боялся и его с трудом забрали от волонтерши, потому что он никуда не хотел ехать, но теперь он ничего не боится и любит спать на подоконниках.</p>
+                    </div>
                     
                     <div class="cat">
-                        <img class="cat-image" src="../images/cat1.jpg" alt="Кот 1">
-                        <h3>Скуберт</h3>
+                        <img class="cat__image" src="../images/cat1.jpg" alt="Кот 1">
+                        <h3 class="cat__name">Скуберт</h3>
                     </div>
                 </article>
 
                 <article class="news-card">
-                    <h2 class="news-title">Новость 2</h2>
-                    <p class="news-meta">01.05.2025 12:00 А.А.Соловьева</p>
-                    <h3 class="news-title">Завела кота 2.</h3>
-                    </p> Этот кот родился в любви и заботе у породистой мамы, но ему было абсолютно все равно на то, что его увозят в новый дом. По приезде он сразу начал раздражать старшего кота и воровать его еду. </p>
+                    <h2 class="news-card__title">Новость 2</h2>
+                    <p class="news-card__meta">01.05.2025 12:00 А.А.Соловьева</p>
+                    <h3 class="news-card__title">Завела кота 2.</h3>
+                    <div class="news-card__text">
+                        <p>Этот кот родился в любви и заботе у породистой мамы, но ему было абсолютно все равно на то, что его увозят в новый дом. По приезде он сразу начал раздражать старшего кота и воровать его еду.</p>
+                    </div>
                     
                     <div class="cat">
-                        <img class="cat-image" src="../images/cat2.jpg" alt="Кот 2">
-                        <h3>Дуберт</h3>
+                        <img class="cat__image" src="../images/cat2.jpg" alt="Кот 2">
+                        <h3 class="cat__name">Дуберт</h3>
                     </div>
                 </article>
             </div>
         </main>
 
         <footer class="footer">
-            <p>Конец</p>
+            <p class="footer__text">Конец</p>
         </footer>
     </div>
+
+    <script>
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateButtonText(savedTheme);
+        }
+        
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateButtonText(newTheme);
+        }
+        
+        function updateButtonText(theme) {
+            const button = document.querySelector('.theme-switcher__button');
+            if (button) {
+                button.textContent = theme === 'light' ? '🌙 Тёмная' : '☀️ Светлая';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', loadTheme);
+    </script>
 </body>
 
 </html>

@@ -6,220 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты</title>
     <link rel="stylesheet" href="../style/styles.css">
-    <style>
-        dialog::backdrop {
-            background: rgba(0, 0, 0, 0.6);
-            animation: fadeIn 0.3s ease;
-        }
-
-        dialog {
-            border: none;
-            border-radius: 12px;
-            padding: 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            animation: slideIn 0.3s ease;
-            max-width: 500px;
-            width: 90vw;
-            max-height: 90vh;
-            overflow-y: auto;
-            background: white;
-        }
-
-        .modal-header {
-            background: #962092;
-            color: white;
-            padding: 1.5rem;
-            border-radius: 12px 12px 0 0;
-            margin: 0;
-        }
-
-        .modal-header h2 {
-            margin: 0;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .modal-content {
-            padding: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid #e9ecef;
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-            box-sizing: border-box;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #962092;
-        }
-
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: flex-end;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .btn-primary {
-            background: #b015cf;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #bf21bc;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: #f8f9fa;
-            color: #2c3e50;
-            border: 2px solid #e9ecef;
-        }
-
-        .btn-secondary:hover {
-            background: #e9ecef;
-        }
-
-        .required {
-            color: #e74c3c;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px) scale(0.9);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        /* Адаптивность */
-        @media (max-width: 600px) {
-            dialog {
-                margin: 1rem;
-                width: calc(100vw - 2rem);
-            }
-
-            .modal-actions {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-        }
-    </style>
 </head>
 
 <body>
     <div class="page-container">
         <header class="header">
-            <h1>☀️</h1>
+            <h1 class="header__title">☀️</h1>
+            <div class="theme-switcher">
+                <button class="theme-switcher__button" onclick="toggleTheme()">🌙 Тёмная</button>
+            </div>
         </header>
 
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+                <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
+                <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+                <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+                <li class="nav__item"><a class="nav__link nav__link--active" href="contacts.html">Контакты</a></li>
             </ul>
         </nav>
 
-        <main class="content">
-            <section class="contacts-container">
+        <main class="main">
+            <section class="contacts__container">
                 <h1 class="section-title">Наши контакты</h1>
 
                 <article class="contact-info">
-                    <h3>Электронная почта</h3>
-                    <p>Адрес электронной почты: loknxq@notgmail.ru</p>
+                    <h3 class="contact-info__title">Электронная почта</h3>
+                    <p class="contact-info__text">Адрес электронной почты: loknxq@notgmail.ru</p>
                 </article>
 
                 <article class="contact-info">
-                    <h3>Физический адрес</h3>
-                    <p>Адрес: г. Москва, ул. Пушкина, д. Колотушкина</p>
+                    <h3 class="contact-info__title">Физический адрес</h3>
+                    <p class="contact-info__text">Адрес: г. Москва, ул. Пушкина, д. Колотушкина</p>
                 </article>
-                <button class="contact-button" onclick="contactModal.showModal()">Связаться с нами</button>
+                
+                <button class="contact-button" onclick="document.getElementById('contactModal').showModal()">Связаться с нами</button>
             </section>
         </main>
 
         <footer class="footer">
-            <p>Конец</p>
+            <p class="footer__text">Конец</p>
         </footer>
+
         <dialog id="contactModal">
-            <div class="modal-header">
+            <div class="modal__header">
                 <h2>Форма обратной связи</h2>
             </div>
 
-            <div class="modal-content">
+            <div class="modal__content">
                 <form id="feedbackForm">
-                    <div class="form-group">
-                        <label for="name">Имя <span class="required">*</span></label>
-                        <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                    <div class="form__group">
+                        <label for="name" class="form__label">Имя <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="Введите ваше имя" class="form__input">
                     </div>
 
-                    <div class="form-group">
-                        <label for="phone">Телефон <span class="required">*</span></label>
-                        <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                    <div class="form__group">
+                        <label for="phone" class="form__label">Телефон <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX" class="form__input">
                     </div>
 
-                    <div class="form-group">
-                        <label for="email">Электронная почта <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+                    <div class="form__group">
+                        <label for="email" class="form__label">Электронная почта <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="example@mail.ru" class="form__input">
                     </div>
 
-                    <div class="form-group">
-                        <label for="category">Категория обращения <span class="required">*</span></label>
-                        <select id="category" name="category" required>
+                    <div class="form__group">
+                        <label for="category" class="form__label">Категория обращения <span class="required">*</span></label>
+                        <select id="category" name="category" required class="form__select">
                             <option value="">Выберите категорию</option>
                             <option value="technical">Техническая поддержка</option>
                             <option value="commercial">Коммерческое предложение</option>
@@ -230,61 +84,82 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="message">Текст обращения <span class="required">*</span></label>
+                    <div class="form__group">
+                        <label for="message" class="form__label">Текст обращения <span class="required">*</span></label>
                         <textarea id="message" name="message" required
-                            placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                            placeholder="Опишите вашу проблему или вопрос..." class="form__textarea"></textarea>
                     </div>
 
-                    <div class="modal-actions">
-                        <button type="button" class="btn btn-secondary" onclick="closeModal()">Отмена</button>
-                        <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+                    <div class="modal__actions">
+                        <button type="button" class="btn btn--secondary" onclick="closeModal()">Отмена</button>
+                        <button type="submit" class="btn btn--primary">Отправить</button>
                     </div>
                 </form>
             </div>
         </dialog>
-        <script>
-            function closeModal() {
-                const modal = document.getElementById('contactModal');
-                const form = document.getElementById('feedbackForm');
-                modal.close();
-                form.reset();
-            }
-            function submitForm() {
-                const form = document.getElementById('feedbackForm');
-                const formData = new FormData(form);
-                if (!form.checkValidity()) {
-                    form.reportValidity();
-                    return;
-                }
-                const data = {
-                    name: formData.get('name'),
-                    phone: formData.get('phone'),
-                    email: formData.get('email'),
-                    category: formData.get('category'),
-                    message: formData.get('message')
-                };
-                console.log('Данные формы:', data);
-                alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
+    </div>
+
+    <script>
+        function closeModal() {
+            const modal = document.getElementById('contactModal');
+            const form = document.getElementById('feedbackForm');
+            modal.close();
+            form.reset();
+        }
+
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                category: formData.get('category'),
+                message: formData.get('message')
+            };
+            
+            console.log('Данные формы:', data);
+            alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
+            closeModal();
+        });
+
+        document.getElementById('contactModal').addEventListener('click', function (event) {
+            if (event.target === this) {
                 closeModal();
             }
-            document.getElementById('contactModal').addEventListener('click', function (event) {
-                if (event.target === this) {
-                    closeModal();
-                }
-            });
-            document.getElementById('feedbackForm').addEventListener('keypress', function (event) {
-                if (event.key === 'Enter' && event.target.type !== 'textarea') {
-                    event.preventDefault();
-                }
-            });
-            document.getElementById('contactModal').addEventListener('keydown', function (event) {
-                if (event.key === 'Escape') {
-                    closeModal();
-                }
-            });
-        </script>
-    </div>
+        });
+
+        document.getElementById('contactModal').addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateButtonText(savedTheme);
+        }
+        
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateButtonText(newTheme);
+        }
+        
+        function updateButtonText(theme) {
+            const button = document.querySelector('.theme-switcher__button');
+            if (button) {
+                button.textContent = theme === 'light' ? '🌙 Тёмная' : '☀️ Светлая';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', loadTheme);
+    </script>
 </body>
 
 </html>
